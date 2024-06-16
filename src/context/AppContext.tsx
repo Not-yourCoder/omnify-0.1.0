@@ -1,3 +1,5 @@
+
+"use client"
 //context for sidebar expand 
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 

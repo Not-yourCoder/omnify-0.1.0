@@ -1,4 +1,4 @@
-import { colors } from '@/constants/colors'
+
 import React from 'react'
 
 type Props = {

@@ -1,3 +1,4 @@
+"use client"
 //context for selected menu from the sidebar
 
 import React, { ReactNode, createContext, useContext, useState } from 'react';

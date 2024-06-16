@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import SearchComponent from '../../ui/ui_search/Search';
 import { Person, people } from '@/constants/menu';

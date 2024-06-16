@@ -1,3 +1,4 @@
+"use client"
 //this context is used for the services / products
 
 import React, { createContext, useState, useContext, ReactNode } from 'react';

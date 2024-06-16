@@ -1,3 +1,5 @@
+"use client"
+
 import React, { ChangeEvent, useState, useMemo } from 'react';
 import Input from '../../customInput/Input';
 import CheckBox from '../ui_checkbox/CheckBox';
