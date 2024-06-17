@@ -169,4 +169,9 @@ export const service: Service[] = [
   { label: "Service type", placeholder: "Select service type" },
   { label: "Status", placeholder: "Select status" },
 ];
-export const serviceStatus: string[] = ["active", "lead", "inactive"];
+export const serviceStatus: string[] = [
+  "Public",
+  "Private",
+  "Disable",
+  "Draft",
+];

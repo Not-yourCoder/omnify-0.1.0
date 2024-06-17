@@ -26,7 +26,9 @@ const Dashboard = () => {
             ) : (
                 <>
                     <div className={`transition-width duration-300 ease-in-out ${expand ? 'w-1/6' : 'w-[5%]'}`}>
-                        {expand ? <DashboardSidebar /> : <SidebarCompressed />}
+                        {expand ? <DashboardSidebar setOpenSidebar={function (value: React.SetStateAction<boolean>): void {
+                                throw new Error('Function not implemented.');
+                            } } /> : <SidebarCompressed />}
                     </div>
                     <div className={`transition-width duration-300 ease-in-out ${expand ? 'w-5/6' : 'w-[95%]'}`}>
                         <DashboardContent />
