@@ -1,4 +1,4 @@
-# Project Name
+# Omnify
 
 A brief description of what your project does and why it exists.
 
@@ -97,7 +97,7 @@ src/
 ├── hooks/              # Custom hooks for reusable logic
 ├── utils/              # Helper functions and utilities
 └── widgets/            # Reusable widgets
-
+```
 ## Contributing
 ## Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure that your code adheres to the project's coding standards and includes appropriate tests.
 
