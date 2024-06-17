@@ -1,5 +1,5 @@
 "use client"
-import Input from '@/components/customInput/Input';
+import Input from '@/components/ui/ui_customInput/Input';
 import Dropdown from '@/components/ui/ui-dropdown/dropdown';
 import { images } from '@/constants/images';
 import { dropdownMenu } from '@/constants/menu';
@@ -53,7 +53,7 @@ const ScheduledDate: React.FC<Props> = () => {
                         From
                     </div>
                     <div className='flex p-3 border rounded-xl mt-2 bg-gray-200/40' onClick={() => setOpenDateFrom(!openDateFrom)}>
-                        <div>
+                        <div className='w-8'>
                             <Image src={images.calender} width={24} height={24} alt="calendar_icon" />
                         </div>
                         <Input type='text' readOnly placeholder='Pick a date' className='border-none' value={dateFrom} />
@@ -65,7 +65,7 @@ const ScheduledDate: React.FC<Props> = () => {
                         To
                     </div>
                     <div className='flex p-3 border rounded-xl bg-gray-200/40 mt-2' onClick={() => setOpenDateTo(!openDateTo)}>
-                        <div>
+                        <div className='w-8'>
                             <Image src={images.calender} width={24} height={24} alt="calendar_icon" />
                         </div>
                         <Input type='text' readOnly placeholder='Pick a date' className='border-none' value={dateTo} />

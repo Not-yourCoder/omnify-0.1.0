@@ -1,7 +1,7 @@
 "use client"
 
 import React, { ChangeEvent, useState, useMemo } from 'react';
-import Input from '../../customInput/Input';
+import Input from '../ui_customInput/Input';
 import CheckBox from '../ui_checkbox/CheckBox';
 import { CompanyEntity } from '@/constants/services';
 import { Person } from '@/constants/menu';

@@ -13,12 +13,15 @@ const Dashboard = () => {
         <div className='flex'>
             {windowWidth < 1550 ? (
                 <div className='grid grid-cols-12'>
-                <div className='col-span-1'>
-                    <SidebarCompressed />
-                </div>
-                    <div className='col-span-11'>
-                    <DashboardContent />
-                </div>
+                    {windowWidth > 650 && (
+                        <div className='col-span-1'>
+                            <SidebarCompressed />
+                        </div>
+
+                    )}
+                    <div className={`${windowWidth > 650 ? "col-span-11" : "col-span-12"}`}>
+                        <DashboardContent />
+                    </div>
                 </div>
             ) : (
                 <>

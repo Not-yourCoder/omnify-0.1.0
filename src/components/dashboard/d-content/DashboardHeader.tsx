@@ -1,4 +1,4 @@
-import Input from '@/components/customInput/Input';
+import Input from '@/components/ui/ui_customInput/Input';
 import EditColumn from '@/components/editColumn/EditColumn';
 import FilterModal from '@/components/filtermodal/FilterModal';
 import { images } from '@/constants/images';
@@ -24,7 +24,7 @@ const DashboardHeader = (props: Props) => {
         <div>
             {windowWidth < 650 ? (<div className='flex justify-between items-center'>
                 <h1 className='capitalize font-semibold text-xl'>{selectedMenu}</h1>
-                <PiHamburger size={30}/>
+                <PiHamburger size={30} />
             </div>) : (<h1 className='capitalize font-semibold text-xl'>{selectedMenu}</h1>)}
             <div className='flex max-[1145px] gap-4 mt-8 mr-4'>
                 {dheader.map(({ label, count }, index) => (

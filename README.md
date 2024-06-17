@@ -1,6 +1,5 @@
 # Omnify
 
-A brief description of what your project does and why it exists.
 
 ## Table of Contents
 

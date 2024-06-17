@@ -1,7 +1,7 @@
 import React from 'react';
 import CheckBox from '../ui/ui_checkbox/CheckBox';
-import PrimaryBtn from '../buttons/primary-btn';
-import SecondaryBtn from '../buttons/sec-btn';
+import PrimaryBtn from '../ui/ui_buttons/primary-btn';
+import SecondaryBtn from '../ui/ui_buttons/sec-btn';
 import { useEditModalContext } from '@/context/EditColumnModalContext';
 import { mockData } from '@/constants/data';
 import { useSelectedColumns } from '@/context/ColumnContext';
