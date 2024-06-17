@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Name
+
+A brief description of what your project does and why it exists.
+
+## Table of Contents
+
+1. [Project Overview](#project-overview)
+2. [Technologies Used](#technologies-used)
+3. [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+4. [Usage](#usage)
+5. [Folder Structure](#folder-structure)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Contact](#contact)
+
+## Project Overview
+
+Omnify is a web app that helps automate your business and simplify your life with an all-in-one online booking system. Omnify streamlines operations through a single, easy-to-use dashboard. With Omnify, you can simplify your booking process and focus on delivering exceptional services to your clients. 🚀
+
+
+## Technologies Used
+
+
+- [React 18](https://react.dev/)
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Context Api](https://react.dev/reference/react/createContext)
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [dayjs](https://day.js.org/)
+
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Make sure you have the following installed on your system:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Node.js](https://nodejs.org/en/download/)
+- [npm](https://www.npmjs.com/get-npm)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository:
 
-## Learn More
+    ```sh
+    git clone https://github.com/Not-yourCoder/omnify-0.1.0.git
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Navigate to the project directory:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```sh
+    cd omnify-0.1.0
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Install dependencies:
 
-## Deploy on Vercel
+    ```sh
+    npm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    or
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    ```sh
+    npm i
+    ```
+
+## Usage
+
+Describe how to use your project. Provide examples if possible.
+
+1. Start the development server:
+
+    ```sh
+    npm run dev
+    ```
+
+
+2. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Folder Structure
+
+
+```plaintext
+src/
+├── app/ 
+├── components/ 
+│   ├── dashboard/      # Dashboard-specific components
+│   ├── editColumn/     # Edit column component
+│   ├── filterModal/    # Filter modal component
+│   ├── modal/          # Reusable modal components
+│   └── ui/             # Reusable UI components
+├── constants/          # Constants such as images, colors, etc.
+├── context/            # Context providers for state management
+├── hooks/              # Custom hooks for reusable logic
+├── utils/              # Helper functions and utilities
+└── widgets/            # Reusable widgets
+
+## Contributing
+## Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure that your code adheres to the project's coding standards and includes appropriate tests.
+
+- Fork the repository
+- Create your feature branch (git checkout -b feature/YourFeature)
+- Commit your changes (git commit -m 'Add some feature')
+- Push to the branch (git push origin feature/YourFeature)
+- Create a new Pull Request
+
+## License
+- This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+For any inquiries or feedback, please contact us at xyz@gmail.com.
