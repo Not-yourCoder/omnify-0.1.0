@@ -19,7 +19,7 @@ const LogoContainer = ({ setOpenSidebar }: Props) => {
 
 
     return (
-        <div className='px-2 py-8'>
+        <div className='px-2 py-8 text-black'>
             <div className='flex items-center justify-between'>
                 <div className='flex items-center gap-4 max-[650px]:gap-2'>
                     <Image src={images.logo} width={30} height={30} alt="logo" />

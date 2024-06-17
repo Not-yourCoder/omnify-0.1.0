@@ -1,25 +1,15 @@
-"use client"
-import React, { useState } from 'react';
+// src/components/People/People.tsx
+import React from 'react';
 import SearchComponent from '../../ui/ui_search/Search';
-import { Person, people } from '@/constants/menu';
 import { images } from '@/constants/images';
 import CheckBox from '@/components/ui/ui_checkbox/CheckBox';
+import { people } from '@/constants/menu';
+import { usePeopleContext } from '@/context/SelectedPeopleContext';
 
-const People = () => {
-  const typeOfSearch = "people"
-  const [selectedPeople, setSelectedPeople] = useState<string[]>([]);
+const People: React.FC = () => {
+  const { selectedPeople, selectedPeopleArray, handlePersonSelect } = usePeopleContext();
+  const typeOfSearch = "people";
 
-  const handlePersonSelect = (name: string, isSelected: boolean) => {
-    if (isSelected) {
-      setSelectedPeople(prevSelected => [...prevSelected, name]);
-    } else {
-      setSelectedPeople(prevSelected => prevSelected.filter(person => person !== name));
-    }
-  };
-  const selectedPeopleArray = people.filter(person =>
-    selectedPeople.includes(person.name)
-  );
-  console.log(selectedPeopleArray);
   return (
     <>
       <SearchComponent
@@ -27,7 +17,6 @@ const People = () => {
         placeholder="Search Payer or attendee name"
         icon={images.search}
         selectedPeople={selectedPeople}
-        setSelectedPeople={setSelectedPeople}
         handlePersonSelect={handlePersonSelect}
         typeOfSearch={typeOfSearch}
       />
@@ -38,7 +27,8 @@ const People = () => {
             <div>{item?.name}</div>
             <div className='text-xs bg-gray-300/40 px-[10px] rounded-full'>{item?.type}</div>
           </div>
-        </div>))}
+        </div>
+      ))}
     </>
   );
 };

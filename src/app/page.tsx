@@ -7,6 +7,7 @@ import { StatusProvider } from "@/context/DDStatusContext";
 import { EditModalProvider } from "@/context/EditColumnModalContext";
 import { MenuProvider } from "@/context/MenuContext";
 import { ModalProvider } from "@/context/ModalContext";
+import { PeopleProvider } from "@/context/SelectedPeopleContext";
 import dynamic from "next/dynamic";
 
 
@@ -19,7 +20,9 @@ export default function Home() {
             <DropdownProvider>
               <ServicesProvider>
                 <StatusProvider>
-                  <ClientSideComponent />
+                  <PeopleProvider>
+                    <ClientSideComponent />
+                  </PeopleProvider>
                 </StatusProvider>
               </ServicesProvider>
             </DropdownProvider>

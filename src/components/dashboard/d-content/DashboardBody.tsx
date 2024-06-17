@@ -44,7 +44,7 @@ const DashboardBody: React.FC<Props> = () => {
                                     </td>
                                     {selectedColumns.includes('Created On') && <td className="p-4 whitespace-nowrap">{row.createdOn}</td>}
                                     {selectedColumns.includes('Payer') && <td className="p-4 whitespace-nowrap">{row.payer}</td>}
-                                    {selectedColumns.includes('Status') && <td className="p-4 whitespace-nowrap capitalize"><span className={`inline-flex before:w-2 before:h-2 before:mr-1 before:rounded-full items-center px-2.5 py-0.5 rounded-full text-sm font-medium ${getStatusStyles(row.status)}`}>{row.status}</span></td>}
+                                    {selectedColumns.includes('Status') && <td className="p-4 whitespace-nowrap capitalize"><span className={`inline-flex before:w-2 before:h-2 before:mr-1 before:rounded-full items-center px-2.5 py-1 rounded-full text-sm font-medium ${getStatusStyles(row.status)}`}>{row.status}</span></td>}
                                     {selectedColumns.includes('Email') && <td className="p-4 whitespace-nowrap">{row.email}</td>}
                                     {selectedColumns.includes('Payer Phone') && <td className="p-4 whitespace-nowrap">{row.phone}</td>}
                                     {selectedColumns.includes('Services') && <td className="p-4 whitespace-nowrap">{row.services}</td>}
@@ -69,20 +69,11 @@ export default DashboardBody
 const getStatusStyles = (status: string) => {
     switch (status) {
         case 'lead':
-            return 'bg-yellow-100 text-yellow-800 before:bg-yellow-800';
+            return 'bg-blue-100 text-blue-800 before:bg-blue-800';
         case 'active':
             return 'bg-green-100 text-green-800 before:bg-green-800';
         case 'inactive':
-            return 'bg-red-100 text-red-800 before:bg-red-800';
-        case 'pending':
-            return 'bg-orange-200 text-orange-800 before:bg-yellow-800';
-        case 'failed':
-            return 'bg-red-500 text-white before:bg-red-800';
-        case 'completed':
-            return 'bg-blue-200 text-blue-800 before:bg-red-800';
-        case 'canceled':
-            return 'bg-gray-200 text-gray-800 before:bg-red-800';
-
+            return 'bg-gray-100 text-gray-800 before:bg-gray-800';
         default:
             return 'bg-gray-100 text-gray-800 before:bg-gray-800';
     }

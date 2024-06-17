@@ -14,7 +14,7 @@ type Props = {
 
 const DashboardSidebar = ({ setOpenSidebar }: Props) => {
     return (
-        <div className='px-2 transition-all duration-300 ease-in-out' style={{ background: colors.background_secondary }}>
+        <div className='px-2 transition-all duration-300 ease-in-out text-[#475569]' style={{ background: colors.background_secondary }}>
             <LogoContainer setOpenSidebar={setOpenSidebar} />
             <Location />
             <DashboardMenu />
