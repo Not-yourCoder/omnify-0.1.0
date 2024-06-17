@@ -9,9 +9,8 @@ import Calendar from '@/widgets/Calender';
 import DropDownMenu from '@/components/ui/ui_dropDownMenu/dropdown-menu';
 import { useOrderContext } from '@/context/DDOrderContext';
 
-type Props = {}
 
-const ScheduledDate: React.FC<Props> = () => {
+const ScheduledDate: React.FC = () => {
     const [open, setOpen] = useState<boolean>(false);
     const [openDateFrom, setOpenDateFrom] = useState<boolean>(false);
     const [openDateTo, setOpenDateTo] = useState<boolean>(false);
@@ -45,8 +44,10 @@ const ScheduledDate: React.FC<Props> = () => {
 
     return (
         <>
-            <Dropdown label="Show orders for" handleDropdown={handleDropdown} open={open} placeholder='All time' orders={orders} type={type} />
-            {open && <DropDownMenu menuItems={dropdownMenu} top="15%" setOpen={setOpen} orders={orders} setOrderLabel={setOrderLabel} type={type} />}
+            <div className='relative'>
+                <Dropdown label="Show orders for" handleDropdown={handleDropdown} open={open} placeholder='All time' orders={orders} type={type} />
+                {open && <DropDownMenu menuItems={dropdownMenu} top="100%" setOpen={setOpen} orders={orders} setOrderLabel={setOrderLabel} type={type} />}
+            </div>
             <div className='flex items-center gap-6'>
                 <div className='relative calendar-container'>
                     <div className='font-medium'>

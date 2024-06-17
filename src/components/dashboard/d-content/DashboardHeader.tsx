@@ -1,3 +1,4 @@
+import React from 'react';
 import Input from '@/components/ui/ui_customInput/Input';
 import EditColumn from '@/components/editColumn/EditColumn';
 import FilterModal from '@/components/filtermodal/FilterModal';
@@ -8,24 +9,27 @@ import { useMenuContext } from '@/context/MenuContext';
 import { useModalContext } from '@/context/ModalContext';
 import useWindowWidth from '@/hooks/useWindowWidth';
 import Image from 'next/image';
-import React from 'react';
 import { PiHamburger } from "react-icons/pi";
+import DashboardSidebar from '../d-sidebar/DashboardSidebar';
 
-type Props = {};
-
-const DashboardHeader = (props: Props) => {
+const DashboardHeader: React.FC = () => {
     const { isModalOpen, openModal } = useModalContext();
     const { selectedMenu } = useMenuContext();
+    const [openSidebar, setOpenSidebar] = React.useState<boolean>(false)
     const { isEditModalOpen, openEditModal } = useEditModalContext();
-
-    const windowWidth = useWindowWidth()
+    const windowWidth = useWindowWidth();
 
     return (
         <div>
-            {windowWidth < 650 ? (<div className='flex justify-between items-center'>
+            <div className='flex justify-between items-center'>
                 <h1 className='capitalize font-semibold text-xl'>{selectedMenu}</h1>
-                <PiHamburger size={30} />
-            </div>) : (<h1 className='capitalize font-semibold text-xl'>{selectedMenu}</h1>)}
+                {windowWidth < 650 && <PiHamburger onClick={() => setOpenSidebar(true)} size={30} />}
+
+                <div className={`fixed bg-white border-l z-[999] shadow-md text-xl transform w-72 ${openSidebar ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out font-semibold h-screen top-0 p-2 right-0`}>
+                    <DashboardSidebar setOpenSidebar={setOpenSidebar}/>
+                </div>
+
+            </div>
             <div className='flex max-[1145px] gap-4 mt-8 mr-4'>
                 {dheader.map(({ label, count }, index) => (
                     <div key={index} className='w-[30rem] flex gap-2 items-center p-3 border-2 border-gray-500/50 rounded-xl'>
@@ -41,11 +45,13 @@ const DashboardHeader = (props: Props) => {
                 </div>
                 <div className='flex items-center justify-end gap-8 mx-4'>
                     <div className='bg-gray-200/20'>
-                        {windowWidth < 856 ? <div className='p-2 border border-white hover:border-gray-300 hover:shadow-sm hover:bg-gray-300/10 hover:scale-105 transition-all duration-200 ease-in-out rounded-lg hover:cursor-pointer'>
-                            <Image src={images.search} width={24} height={24} alt="refresh_icon" />
-                        </div>
-                            : <Input icon={images.search} placeholder='Search client' type="text" className='p-2 shadow-sm rounded-lg' aria-label="Search input" />}
-
+                        {windowWidth < 856 ? (
+                            <div className='p-2 border border-white hover:border-gray-300 hover:shadow-sm hover:bg-gray-300/10 hover:scale-105 transition-all duration-200 ease-in-out rounded-lg hover:cursor-pointer'>
+                                <Image src={images.search} width={24} height={24} alt="refresh_icon" />
+                            </div>
+                        ) : (
+                            <Input icon={images.search} placeholder='Search client' type="text" className='p-2 shadow-sm rounded-lg' aria-label="Search input" />
+                        )}
                     </div>
                     <div className='flex items-center gap-8'>
                         <div className='p-2 border border-white hover:border-gray-300 hover:shadow-sm hover:bg-gray-300/10 hover:scale-105 transition-all duration-200 ease-in-out rounded-lg hover:cursor-pointer' aria-label="Refresh">

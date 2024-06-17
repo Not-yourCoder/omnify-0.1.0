@@ -10,18 +10,15 @@ type Props = {
     handleDropdown?: () => void;
     open: boolean | number | null;
     orders?: string | undefined | null;
-    services?: string;
+    services?: string | null;
+    status?: string | null
     type: string;
 };
 
-const Dropdown: React.FC<Props> = ({ label, handleDropdown, open, placeholder, type, orders, services }) => {
+const Dropdown: React.FC<Props> = ({ label, handleDropdown, status, open, placeholder, type, orders, services }) => {
     const [dlabel, setDlabel] = React.useState<string>(placeholder);
 
     useEffect(() => {
-        console.log("DropDown Component ");
-        console.log('Type:', type);
-        console.log('Orders:', orders);
-        console.log('Services:', services);
 
         if (type === "services" && services) {
             setDlabel(services);
@@ -29,7 +26,11 @@ const Dropdown: React.FC<Props> = ({ label, handleDropdown, open, placeholder, t
         if (type === "orders" && orders) {
             setDlabel(orders);
         }
-    }, [orders, services, type]);
+        if (type === "status" && status) {
+            setDlabel(status);
+        }
+
+    }, [orders, services, status, type]);
 
     return (
         <div className='mb-8'>

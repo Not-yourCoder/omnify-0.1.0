@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Dropdown from '@/components/ui/ui-dropdown/dropdown';
-import { companyEntities, serviceNames } from '@/constants/services';
+import { companyEntities, service, serviceNames, serviceStatus } from '@/constants/services';
 import RadioButton from '@/components/ui/ui_radio/radio';
 import SearchComponent from '@/components/ui/ui_search/Search';
 import { images } from '@/constants/images';
 import DropDownMenu from '@/components/ui/ui_dropDownMenu/dropdown-menu';
 import { useServiceContext } from '@/context/DDServicesContext';
 import CheckBox from '@/components/ui/ui_checkbox/CheckBox';
+import { useStatusContext } from '@/context/DDStatusContext';
 
 type Props = {}
 
@@ -15,12 +16,18 @@ const Services: React.FC<Props> = () => {
     const [searchOption, setSearchOption] = React.useState<string>('name');
     const [selectedServices, setselectedService] = React.useState<string[]>([])
 
+    //contexts
     const { type } = useServiceContext()
+    const { status, setStatusLabel } = useStatusContext()
+    const { services, setServicesLabel } = useServiceContext()
+
+
     const typeOfSearch = "services"
+
+    //handlers
     const handleDropdown = (index: number) => {
         setOpen(open === index ? null : index);
     }
-
     const handleServiceSelect = (name: string, isSelected: boolean) => {
         if (isSelected) {
             setselectedService(prevSelected => [...prevSelected, name]);
@@ -28,15 +35,8 @@ const Services: React.FC<Props> = () => {
             setselectedService(prevSelected => prevSelected.filter(service => service !== name));
         }
     };
-    const service = [
-        { label: "Service type", placeholder: "Select service type" },
-        { label: "Status", placeholder: "Select status" }
-    ];
-
     const selectedServiceArray = companyEntities.filter((service) => selectedServices.includes(service.name))
 
-    const serviceStatus = ["active", "lead", "inactive"];
-    const { setServicesLabel } = useServiceContext()
     return (
         <div>
             <div className='flex items-center justify-between mb-4 mx-4'>
@@ -62,21 +62,24 @@ const Services: React.FC<Props> = () => {
             {searchOption === "name" ? (
                 <SearchComponent items={companyEntities} icon={images.search} placeholder='Search service name' setSelectedService={setselectedService} selectedServices={selectedServices} handleServiceSelect={handleServiceSelect} typeOfSearch={typeOfSearch} />
             ) : (
-                service.map(({ label, placeholder }, index) => (
-                    <div key={index} className="mb-4">
+                service?.map(({ label, placeholder }, index) => (
+
+                    <div key={index} className="mb-4 relative">
                         <Dropdown
                             label={label}
                             placeholder={placeholder}
                             open={open === index}
+                            services={index === 0 ? services : status}
                             handleDropdown={() => handleDropdown(index)}
                             type={type}
                         />
                         {open === index && (
                             <DropDownMenu
                                 menuItems={index === 0 ? serviceNames : serviceStatus}
-                                top={index === 0 ? "24%" : "47%"}
+                                top="100%"
                                 setOpen={setOpen}
-                                setServicesLabel={setServicesLabel}
+                                services={index === 0 ? services : status}
+                                setServicesLabel={index === 0 ? setServicesLabel : setStatusLabel}
                                 type={type}
                             />
                         )}

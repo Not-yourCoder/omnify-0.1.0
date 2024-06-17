@@ -56,7 +56,7 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
     }, [items, searchTerm]);
 
     return (
-        <div className="flex flex-col items-center p-4">
+        <div className="flex flex-col items-center p-4  ">
             <label htmlFor="searchInput" className="sr-only">Search</label>
             <Input
                 id="searchInput"
@@ -65,7 +65,7 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
                 value={searchTerm}
                 onChange={handleSearch}
                 placeholder={placeholder}
-                className="p-2 outline-none w-full"
+                className="p-2 outline-none w-full bg-gray-200/70"
                 aria-label="Search input"
             />
             {searchTerm && (

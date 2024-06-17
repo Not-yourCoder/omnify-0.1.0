@@ -18,7 +18,7 @@ interface Props {
 
 const Input = ({ icon, styles, className, ...rest }: Props) => {
     return (
-        <div className={`flex items-center border-2 focus:outline-4 rounded-xl bg-gray-200/10 ${className}`} style={styles}>
+        <div className={`flex items-center border-2 focus:outline-4 rounded-xl bg-gray-200/20 ${className}`} style={styles}>
             {icon && <Image src={icon} width={24} height={24} alt="icon" />}
             <input {...rest} className="outline-none ml-2 placeholder:text-lg placeholder:text-gray-500 bg-gray-200/20 w-full h-full" />
         </div>

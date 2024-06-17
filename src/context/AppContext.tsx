@@ -5,6 +5,7 @@ import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 interface AppContextProps {
     expand: boolean;
+    setExpand: React.Dispatch<React.SetStateAction<boolean>>
     toggleExpand: () => void;
 }
 
@@ -22,7 +23,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     };
 
     return (
-        <AppContext.Provider value={{ expand, toggleExpand }}>
+        <AppContext.Provider value={{ expand, setExpand, toggleExpand }}>
             {children}
         </AppContext.Provider>
     );

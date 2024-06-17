@@ -4,6 +4,11 @@ export interface CompanyEntity {
   visibility: "Private" | "Public";
 }
 
+export interface Service {
+  label: string;
+  placeholder: string;
+}
+
 export const companyEntities: CompanyEntity[] = [
   { name: "Aqua Aerobics Class", type: "Class", visibility: "Public" },
   { name: "Archery Facility", type: "Facility", visibility: "Private" },
@@ -159,3 +164,9 @@ export const serviceNames: string[] = [
   "Writing Class",
   "Zoning Consulting",
 ];
+
+export const service: Service[] = [
+  { label: "Service type", placeholder: "Select service type" },
+  { label: "Status", placeholder: "Select status" },
+];
+export const serviceStatus: string[] = ["active", "lead", "inactive"];
