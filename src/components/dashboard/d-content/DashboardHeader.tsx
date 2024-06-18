@@ -13,6 +13,7 @@ import { PiHamburger } from "react-icons/pi";
 import DashboardSidebar from '../d-sidebar/DashboardSidebar';
 import { usePeopleContext } from '@/context/SelectedPeopleContext';
 import { IoCloseOutline } from 'react-icons/io5';
+import { colors } from '@/constants/colors';
 
 const DashboardHeader: React.FC = () => {
     const { isModalOpen, openModal } = useModalContext();
@@ -28,7 +29,7 @@ const DashboardHeader: React.FC = () => {
             <div className='flex justify-between items-center'>
                 <h1 className='capitalize font-semibold text-xl'>{selectedMenu}</h1>
                 {windowWidth < 650 && <PiHamburger onClick={() => setOpenSidebar(true)} size={30} />}
-                <div className={`fixed bg-white border-l z-[999] shadow-md text-xl transform w-72 ${openSidebar ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out font-semibold h-screen top-0 p-2 right-0`}>
+                <div className={`fixed z-[999] text-xl transform w-72 ${openSidebar ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out font-semibold h-[100%] top-0 p-2 right-0`} style={{ background: colors.background_secondary }}>
                     <DashboardSidebar setOpenSidebar={setOpenSidebar} />
                 </div>
             </div>

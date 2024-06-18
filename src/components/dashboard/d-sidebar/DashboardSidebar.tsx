@@ -14,11 +14,11 @@ type Props = {
 
 const DashboardSidebar = ({ setOpenSidebar }: Props) => {
     return (
-        <div className='px-2 transition-all duration-300 ease-in-out text-[#475569]' style={{ background: colors.background_secondary }}>
+        <div className='px-2 transition-all h-[100%] duration-300 ease-in-out text-[#475569]' style={{ background: colors.background_secondary }}>
             <LogoContainer setOpenSidebar={setOpenSidebar} />
             <Location />
             <DashboardMenu />
-            <div className='flex items-center justify-between p-2 mt-[280px]'>
+            <div className='flex items-center justify-between p-2 max-[650px]:mt-[240px] mt-[280px]'>
                 <div className='flex items-center gap-2'>
                     <Image src={images.layout} width={24} height={24} alt="icon" />
                     <div className='font-medium' style={{ color: colors.text_color }}>Dashboard</div>

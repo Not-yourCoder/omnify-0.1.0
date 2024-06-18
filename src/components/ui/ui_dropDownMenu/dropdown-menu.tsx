@@ -15,7 +15,7 @@ type Props = {
     type: string
 };
 
-const DropDownMenu: React.FC<Props> = ({ top, services, setOrderLabel, setStatusLabel, menuItems, orders, type, setOpen, setServicesLabel }) => {
+const DropDownMenu: React.FC<Props> = ({ top, services, setOrderLabel, menuItems, orders, type, setOpen, setServicesLabel }) => {
 
     const handleDropDownMenu = (item: string, type: string) => {
         if (type === "orders") {

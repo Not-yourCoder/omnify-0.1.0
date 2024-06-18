@@ -14,7 +14,7 @@ const DashboardMenu = (props: Props) => {
         setSelectedMenu(menuItem); // Update selected menu item
     };
     return (
-        <div className='mt-[125px] max-[650px]:mt-[95px] flex flex-col py-2 rounded-xl' style={{ color: colors.text_color }}>
+        <div className='mt-[125px]  flex flex-col py-2 rounded-xl' style={{ color: colors.text_color }}>
             {dashboardMenu.map((item, index) => (
                 <div key={index} className={`flex items-center gap-2 rounded-xl cursor-pointer p-3 border-b-2 ${selectedMenu === item.label ? ' border-gray-500/10 bg-white' : ' border-transparent'}`} onClick={() => handleMenuItemClick(item.label)}>
                     <Image src={item.icon} width={26} height={26} alt="icon" />

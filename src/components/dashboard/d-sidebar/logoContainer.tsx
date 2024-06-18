@@ -23,7 +23,7 @@ const LogoContainer = ({ setOpenSidebar }: Props) => {
             <div className='flex items-center justify-between'>
                 <div className='flex items-center gap-4 max-[650px]:gap-2'>
                     <Image src={images.logo} width={30} height={30} alt="logo" />
-                    <div className='text-2xl max-[1600px]:text-xl font-bold flex items-center gap-1'>
+                    <div className='text-2xl max-[1600px]:text-xl  font-bold flex items-center gap-1'>
                         Front
                         <div className='bg-black w-[6px] h-[6px] rounded'></div>
                         Desk
